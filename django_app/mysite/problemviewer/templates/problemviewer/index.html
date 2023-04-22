@@ -1,7 +1,7 @@
 {% if problem_list %}
 <ul>
   {% for problem in problem_list %}
-     <li><a href='/problemviewer/{{problem.ProblemName}}/'>{{problem.ProblemName}}</a></li>
+     <li><a href='/problemviewer/{{problem.ProblemID}}/'>{{problem.ProblemName}}</a></li>
      {% endfor %}
 </ul>
 {% else %}

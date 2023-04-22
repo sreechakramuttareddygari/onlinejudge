@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>problem.ProblemName</title>
+</head>
+<body>
+{% if problem %}
+<h1>{{problem.ProblemName}}</h1>
+<h6>{{problem.Statement}}</h6>
+{% else %}
+<p>problem is not available</p>
+{% endif %}
+</body>
+</html>
