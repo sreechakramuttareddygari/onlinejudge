@@ -1,9 +1,9 @@
 {% if problem_list %}
 <ul>
   {% for problem in problem_list %}
-     <li><a href='/polls/{{problem.ProblemID}}/'>{{problem.ProblemID}}</a></li>
+     <li><a href='/problemviewer/{{problem.ProblemName}}/'>{{problem.ProblemName}}</a></li>
      {% endfor %}
 </ul>
 {% else %}
-<p>No polls are available</p>
+<p>No problems are available</p>
 {% endif %}

@@ -9,7 +9,7 @@ def problemslist(request):
     # return HttpResponse(output)
     return render(request, 'problemviewer/index.html', context)
 
-def problemstatement(requet):
+# def problemstatement(requet):
 
 
 
