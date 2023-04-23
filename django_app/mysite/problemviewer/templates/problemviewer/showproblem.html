@@ -8,10 +8,10 @@
 {% if problem %}
 <h1>{{problem.ProblemName}}</h1>
 <h6>{{problem.Statement}}</h6>
-<form action="{% url 'polls:vote' question.id %}" method="post">
+<form action="{% url 'problemviewer:submit' problem.ProblemID %}" method="post">
 {% csrf_token %}
 <fieldset>
-    <textarea name="code" id="code" > </textarea>
+    <textarea name="code" id="code" rows="100" cols="50"> </textarea>
         <label for="code">code editor:</label><br>
 </fieldset>
 <input type="submit" value="submit">

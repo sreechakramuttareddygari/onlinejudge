@@ -12,9 +12,9 @@ def selectproblem(request, problemID):
     selection = ISelectProblem.SimpleSelect()
     return selection.showProblem(request,problemID)
 def submitSolution(request, problemID):
-    code = request.GET['code']
+    code = request.POST['code']
     executor = IExecute.SimpleExecutorCPP()
-    solution = ISolution.PracticeSolution(code=code,executor=executor)
+    solution = ISolution.PracticeSolution(code=code,problemID=problemID,executor=executor)
     solution.submit()
     #code,language,problemID,executor,evaluator,solutionID,userID
 

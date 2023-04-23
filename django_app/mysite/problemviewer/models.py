@@ -35,8 +35,8 @@ class Problems(models.Model):
 class Testcases(models.Model):
     testcaseID = models.IntegerField(primary_key = True)
     ProblemId = models.ForeignKey(Problems, on_delete=models.CASCADE)
-    Input     = models.CharField(max_length=1000)
-    Output    = models.CharField(max_length=1000)
+    Input     = models.TextField(null=True)
+    Output    = models.TextField(None)
 
 class Solutions(models.Model):
     SolutionID = models.CharField(max_length=200,primary_key = True)

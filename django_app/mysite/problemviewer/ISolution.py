@@ -24,7 +24,8 @@ class PracticeSolution:
         self.userID = userID
 
     def submit(self):
-        self.executor.execute(self.code)
+        outputs = self.executor.execute(self.code,self.problemID)
+        print(outputs)
 
     def runExec(self):
         pass

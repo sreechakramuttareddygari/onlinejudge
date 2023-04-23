@@ -5,5 +5,5 @@ from . import website
 urlpatterns = [
 path('',website.problemlist,name='index'),
 path('<int:problemID>/',website.selectproblem,name='detail'),
-path('<int:problemID>/Submit/', website.submitSolution, name='submit'),
+path('<int:problemID>/submit/', website.submitSolution, name='submit'),
 ]
