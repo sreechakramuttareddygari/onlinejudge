@@ -24,12 +24,12 @@ class PracticeSolution:
         self.userID = userID
 
     def submit(self):
-        outputs = self.executor.execute(self.code,self.problemID)
-        print(outputs)
-
+        outputs = self.runExec()
+        self.runEval(outputs)
     def runExec(self):
-        pass
-    def runEval(self):
-        pass
+        outputs = self.executor.execute(self.code, self.problemID)
+        return outputs
+    def runEval(self,outputs):
+        return self.evaluator.evaluate(outputs)
     def verdict(self):
         pass

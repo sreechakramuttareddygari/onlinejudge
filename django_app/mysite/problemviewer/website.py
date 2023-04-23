@@ -4,6 +4,7 @@ from . import IViewProblems
 from . import ISelectProblem
 from . import IExecute
 from . import ISolution
+from . import IEvaluator
 
 def problemlist(request):
     listOfProblems = IViewProblems.SimpleView()
@@ -14,7 +15,8 @@ def selectproblem(request, problemID):
 def submitSolution(request, problemID):
     code = request.POST['code']
     executor = IExecute.SimpleExecutorCPP()
-    solution = ISolution.PracticeSolution(code=code,problemID=problemID,executor=executor)
+    evaluator = IEvaluator.BitwiseEvaluator()
+    solution = ISolution.PracticeSolution(code=code,problemID=problemID,executor=executor,evaluator=evaluator)
     solution.submit()
     #code,language,problemID,executor,evaluator,solutionID,userID
 
