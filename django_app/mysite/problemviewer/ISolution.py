@@ -25,7 +25,8 @@ class PracticeSolution:
 
     def submit(self):
         outputs = self.runExec()
-        self.runEval(outputs)
+        print(outputs)
+        print(self.runEval(outputs))
     def runExec(self):
         outputs = self.executor.execute(self.code, self.problemID)
         return outputs
