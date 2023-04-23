@@ -27,14 +27,14 @@ class User(models.Model):
     UserID = models.CharField(max_length=200,primary_key = True)
 
 class Problems(models.Model):
-    ProblemID = models.IntegerField(primary_key = True)
+    ProblemID= models.IntegerField(primary_key = True)
     ProblemName = models.CharField(max_length=200)
     Statement = models.CharField(max_length=1000)
     Difficuly = models.CharField(max_length=30)
 
 class Testcases(models.Model):
     testcaseID = models.IntegerField(primary_key = True)
-    ProblemId = models.ForeignKey(Problems, on_delete=models.CASCADE)
+    ProblemID  = models.ForeignKey(Problems, on_delete=models.CASCADE)
     Input     = models.TextField(null=True)
     Output    = models.TextField(None)
 

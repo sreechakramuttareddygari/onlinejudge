@@ -2,6 +2,7 @@ import zope.interface
 import subprocess
 from django.shortcuts import render
 from .models import Testcases
+from .models import Problems
 
 class IExecutor(zope.interface.Interface):
     def execute(self):
@@ -15,7 +16,7 @@ class SimpleExecutorCPP():
         codeFile.close()
         command = "c++ code.cpp"
         subprocess.run(command, shell=True)
-        tests = Testcases.objects.raw('SELECT testcaseID,Input FROM problemviewer_Testcases WHERE ProblemID=' + str(problemID))
+        tests = Testcases.objects.raw('SELECT * FROM problemviewer_Testcases WHERE ProblemID_id='+str(problemID))
         outputs={}
         for test in tests:
             input = open("input.txt","w")
