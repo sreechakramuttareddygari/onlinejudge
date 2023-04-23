@@ -41,8 +41,8 @@ class Testcases(models.Model):
 class Solutions(models.Model):
     SolutionID = models.CharField(max_length=200,primary_key = True)
     ProblemID = models.ForeignKey(Problems,on_delete = models.SET_NULL,null=True)
-    UserID = models.ForeignKey(User, on_delete=models.CASCADE)
-    Submitted_at = models.DateTimeField
+    UserID = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    Submitted_at = models.DateTimeField(auto_now=False,auto_now_add=False,null=True)
     Failed_test_case = models.ForeignKey(Testcases,on_delete = models.SET_NULL,null=True)
     succededTestcases = models.IntegerField
     Time_taken = models.TimeField(auto_now=False, auto_now_add=False)
