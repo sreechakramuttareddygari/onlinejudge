@@ -20,6 +20,8 @@ class SimpleExecutorCPP():
         outputs={}
         for test in tests:
             input = open("input.txt","w")
+            command = "rm output"+str(test.testcaseID)+'.txt'
+            subprocess.run(command,shell=True)
             if test.Input is not None:
                 input.write(test.Input)
             command = "./a.out < input.txt > output"+str(test.testcaseID)+'.txt'

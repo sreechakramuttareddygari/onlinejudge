@@ -17,7 +17,7 @@ def submitSolution(request, problemID):
     executor = IExecute.SimpleExecutorCPP()
     evaluator = IEvaluator.BitwiseEvaluator()
     solution = ISolution.PracticeSolution(code=code,problemID=problemID,executor=executor,evaluator=evaluator)
-    solution.submit()
+    return solution.submit(request)
     #code,language,problemID,executor,evaluator,solutionID,userID
 
 

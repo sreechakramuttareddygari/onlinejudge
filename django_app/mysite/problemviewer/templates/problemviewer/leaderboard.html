@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-
+{% if solution_list %}
+<ul>
+  {% for solution in solution_list %}
+     <li>{{solution.ProblemID}} {{solution.Verdict}}</li>
+     {% endfor %}
+</ul>
+{% else %}
+<p>No problems are available</p>
+{% endif %}
 </body>
 </html>
