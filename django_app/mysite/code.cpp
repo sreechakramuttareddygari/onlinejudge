@@ -1,5 +1,15 @@
-#include <bits/stdc++.h>
+ #include <bits/stdc++.h>
 using namespace std;
 int main(){
-cout<<"Hello, World!\n";
-cout<<"testing 1 2 4";}
+    int n;
+    cin >> n;
+    int count=0;
+    //cout<<n<<" ";
+    double sq_n = sqrt(n);
+    for(int i=1;i<=sq_n;i++){
+    if(i*i<=n){
+    count++;
+}
+}
+cout<<count;
+}

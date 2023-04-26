@@ -34,6 +34,7 @@ class PracticeSolution:
         verdict = self.runEval(outputs)
         solution = Solutions(SolutionID = self.solutionID,Submitted_at=submittedat,ProblemID_id=self.problemID,UserID_id=self.userID,Failed_test_case_id=None,Time_taken=datetime.datetime.now(),Verdict=verdict)
         solution.save()
+        print(verdict)
         #Solutions.objects.raw("INSERT INTO problemviewer_Solutions (SolutionID, ProblemID_id, UserID_id, Submitted_at, Failed_test_case_id, succededTestcases,Time_taken,Verdict) VALUES ("+str(self.solutionID)+','+str(self.problemID)+','+str(self.userID)+','+str(submittedat)+','+str(None)+','+str(1)+','+str(0)+','+str(verdict)+")")
         # latest_question_list = Solutions.objects.order_by('SolutionID')[:5]
         leaderboard = ILeaderboard.SimpleLeaderboard()

@@ -9,7 +9,7 @@ class ILeaderboard(zope.interface.Interface):
 @zope.interface.implementer(ILeaderboard)
 class SimpleLeaderboard:
     def leaderboard(self,request,userID,ProblemID):
-        latest_question_list = Solutions.objects.order_by('SolutionID').filter(ProblemID_id=ProblemID)[:10]
+        latest_question_list = Solutions.objects.filter(ProblemID_id=ProblemID).order_by('SolutionID').reverse()[:10]
         context = {'solution_list': latest_question_list}
         # output = ','.join([q.question_test for q in latest_question_list])
         # return HttpResponse(output)

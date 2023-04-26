@@ -8,7 +8,7 @@
 {% if solution_list %}
 <ul>
   {% for solution in solution_list %}
-     <li>{{solution.ProblemID}} {{solution.Verdict}}</li>
+     <li>{{solution.Submitted_at}} {{solution.Verdict}}</li>
      {% endfor %}
 </ul>
 {% else %}
