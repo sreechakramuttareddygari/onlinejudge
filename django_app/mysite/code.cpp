@@ -2,7 +2,7 @@
 using namespace std;
 
 int recurse(string& s, int i,vector<string>& ref,vector<string>& ret,int count){
-        if(i==s.size() || count>4)
+        if(i==s.size() || count>3)
         {   ref.push_back(s.substr(i));
             bool b=true;
             for(int i=0;i<ref.size();i++){
