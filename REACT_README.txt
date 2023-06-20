@@ -1,0 +1,4 @@
+->install node js
+->install npm package manager
+->use npx create-react-app <app_name> --use-npm
+->
