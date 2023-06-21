@@ -33,12 +33,23 @@ def problem_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
+@api_view(['OPTIONS','GET', 'POST'])
+def problem_select(request,problemID):
+    if request.method == 'POST':
+        selection = ISelectProblem.SimpleSelect()
+        print(selection)
+        #return selection
+        return selection.showProblem(request,problemID)
+
 def problemlist(request):
     listOfProblems = IViewProblems.SimpleView()
     return listOfProblems.viewProblems(request)
 def selectproblem(request, problemID):
+    print(problemID)
     selection = ISelectProblem.SimpleSelect()
     return selection.showProblem(request,problemID)
+
 def submitSolution(request, problemID):
     code = request.POST['code']
     executor = IExecute.SimpleExecutorCPP()
